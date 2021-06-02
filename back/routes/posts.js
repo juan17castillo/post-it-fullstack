@@ -3,6 +3,7 @@ import auth from "../middleware/auth.js";
 
 import {
   getPosts,
+  getPostsByUser,
   getPostsBySearch,
   getPost,
   createPost,
@@ -14,6 +15,7 @@ import {
 const router = express.Router();
 
 router.get("/search", getPostsBySearch);
+router.get("/byuser/:id", getPostsByUser);
 router.get("/", getPosts);
 router.get("/:id", getPost);
 router.post("/", auth, createPost);

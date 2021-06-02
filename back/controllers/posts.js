@@ -54,7 +54,6 @@ export const getPostsBySearch = async (req, res) => {
     res.status(404).json({ message: error.message });
   }
 };
-
 /**
  * This function is responsible for searching in the Atlas noSQL database, a post created by an user given a specific id.
  * @param  {Request} req It is in charge of handling the incoming request given the post id.
@@ -158,6 +157,18 @@ export const likePost = async (req, res) => {
   });
 
   res.json(updatedPost);
+};
+
+export const getPostsByUser = async (req, res) => {
+  const {id} = req.params;
+  try {
+    const posts = await PostMessage.find().sort({ creator: {id} });
+    res.status(200).json({
+      data: posts,
+    });
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
 };
 
 export default router;
