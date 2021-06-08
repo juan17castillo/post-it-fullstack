@@ -15,7 +15,7 @@ import {
 const router = express.Router();
 
 router.get("/search", getPostsBySearch);
-router.get("/byuser/:id", getPostsByUser);
+router.get("/creator/:creatorId", getPostsByUser);
 router.get("/", getPosts);
 router.get("/:id", getPost);
 router.post("/", auth, createPost);

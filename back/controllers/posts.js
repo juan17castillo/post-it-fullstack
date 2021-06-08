@@ -159,10 +159,11 @@ export const likePost = async (req, res) => {
   res.json(updatedPost);
 };
 
-export const getPostsByUser = async (req, res) => {
-  const {id} = req.params;
+export const getPostsByUser = async (req, res) =>
+{
+  const {creatorId} = req.params; 
   try {
-    const posts = await PostMessage.find().sort({ creator: {id} });
+    const posts = await PostMessage.find({ creator: creatorId });
     res.status(200).json({
       data: posts,
     });
