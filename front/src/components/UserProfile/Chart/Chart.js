@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Line } from "react-chartjs-2";
-import { Button } from "@material-ui/core/";
+import { Button, Typography } from "@material-ui/core/";
 import { useDispatch, useSelector } from "react-redux";
 import { getPostsByUser } from "../../../actions/posts";
 
@@ -60,7 +60,7 @@ const Chart = () => {
       {
         label: "Dias que más publicas posts",
         fill: true,
-        lineTension: 0.3,
+        lineTension: 0.2,
         backgroundColor: "rgba(63,81,181,0.4)",
         borderColor: "rgba(63,81,181,1)",
         borderCapStyle: "butt",
@@ -82,10 +82,8 @@ const Chart = () => {
   };
 
   return (
-    <div>
-      <h2>Line Example</h2>
-      <Line data={data} />
-      <Button>Click</Button>
+    <div style={{paddingLeft: 30}}>
+      <Line data={data} width={950} height={480} options={{ maintainAspectRatio: false }}/>
     </div>
   );
 };

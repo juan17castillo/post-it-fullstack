@@ -133,67 +133,72 @@ const Admin = () => {
   return (
     <>
       {filteredUsers ? (
-        <TableContainer component={Paper}>
-          <Table
-            className={classes.table}
-            size="small"
-            aria-label="a dense table"
-          >
-            <TableHead>
-              <TableRow>
-                <TableCell align="center" style={{ width: 200 }}>
-                  <Typography color="primary">
-                    <strong>Nombre</strong>
-                  </Typography>
-                </TableCell>
-                <TableCell align="center" style={{ width: 200 }}>
-                  <Typography color="primary">
-                    <strong>Email</strong>
-                  </Typography>
-                </TableCell>
-                <TableCell align="center" style={{ width: 200 }}>
-                  <Typography color="primary">
-                    <strong>Rol</strong>
-                  </Typography>
-                </TableCell>
-                <TableCell align="center" style={{ width: 200 }}>
-                  <Typography color="primary">
-                    <strong>Última conexión</strong>
-                  </Typography>
-                </TableCell>
-                <TableCell align="center" style={{ width: 200 }}>
-                  <Typography color="primary">
-                    <strong>Acciones</strong>
-                  </Typography>
-                </TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              {filteredUsers.map((userRow) => (
-                <TableRow key={userRow._id}>
-                  <TableCell align="center">{userRow.name}</TableCell>
-                  <TableCell align="center">{userRow.email}</TableCell>
-                  <TableCell align="center">
-                    {userRow.role === "common" ? "Común" : "Administrador"}
+        <div>
+        <Typography style={{ textAlign: "center", paddingBottom: 20}} color="secondary">DASHBOARD</Typography>
+          <TableContainer component={Paper}>
+            <Table
+              className={classes.table}
+              size="small"
+              aria-label="a dense table"
+            >
+              <TableHead>
+                <TableRow>
+                  <TableCell align="center" style={{ width: 200 }}>
+                    <Typography color="primary">
+                      <strong>Nombre</strong>
+                    </Typography>
                   </TableCell>
-                  <TableCell align="center">
-                    {moment(userRow.lastConnectionDate).fromNow()}
+                  <TableCell align="center" style={{ width: 200 }}>
+                    <Typography color="primary">
+                      <strong>Email</strong>
+                    </Typography>
                   </TableCell>
-                  <TableCell align="center">
-                    <Button
-                      onClick={() => handleOpenModalPassword(userRow._id)}
-                    >
-                      <VpnKeyIcon color="primary" />
-                    </Button>
-                    <Button onClick={() => handleOpenModalDelete(userRow._id)}>
-                      <DeleteIcon color="secondary" />
-                    </Button>
+                  <TableCell align="center" style={{ width: 200 }}>
+                    <Typography color="primary">
+                      <strong>Rol</strong>
+                    </Typography>
+                  </TableCell>
+                  <TableCell align="center" style={{ width: 200 }}>
+                    <Typography color="primary">
+                      <strong>Última conexión</strong>
+                    </Typography>
+                  </TableCell>
+                  <TableCell align="center" style={{ width: 200 }}>
+                    <Typography color="primary">
+                      <strong>Acciones</strong>
+                    </Typography>
                   </TableCell>
                 </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </TableContainer>
+              </TableHead>
+              <TableBody>
+                {filteredUsers.map((userRow) => (
+                  <TableRow key={userRow._id}>
+                    <TableCell align="center">{userRow.name}</TableCell>
+                    <TableCell align="center">{userRow.email}</TableCell>
+                    <TableCell align="center">
+                      {userRow.role === "common" ? "Común" : "Administrador"}
+                    </TableCell>
+                    <TableCell align="center">
+                      {moment(userRow.lastConnectionDate).fromNow()}
+                    </TableCell>
+                    <TableCell align="center">
+                      <Button
+                        onClick={() => handleOpenModalPassword(userRow._id)}
+                      >
+                        <VpnKeyIcon color="primary" />
+                      </Button>
+                      <Button
+                        onClick={() => handleOpenModalDelete(userRow._id)}
+                      >
+                        <DeleteIcon color="secondary" />
+                      </Button>
+                    </TableCell>
+                  </TableRow>
+                ))}
+              </TableBody>
+            </Table>
+          </TableContainer>
+        </div>
       ) : null}
       {isOpenModal && modalPassword()}
     </>

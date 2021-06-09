@@ -1,5 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Button, Grid, TextField } from "@material-ui/core/";
+import {
+  Button,
+  Grid,
+  GridList,
+  GridListTile,
+  TextField,
+  Typography,
+} from "@material-ui/core/";
 import Dialog from "@material-ui/core/Dialog";
 import DialogActions from "@material-ui/core/DialogActions";
 import DialogContent from "@material-ui/core/DialogContent";
@@ -85,14 +92,20 @@ const UserProfile = () => {
 
   return (
     <>
-      <Grid className={classes.container}>
-        <Chart />
-        <User />
-        <Button color="secondary" onClick={handleOpenModal}>
-          Cambiar contraseña
-        </Button>
-        {isOpenModal && modalPassword()}
-      </Grid>
+      <GridList cellHeight={480} cols={2}>
+        <GridListTile>
+          <Chart />
+        </GridListTile>
+        <GridListTile style={{ marginTop: 80 }}>
+          <User />
+          <Grid style={{ display: "grid" }}>
+            <Button color="secondary" onClick={handleOpenModal}>
+              Cambiar contraseña
+            </Button>
+          </Grid>
+          {isOpenModal && modalPassword()}
+        </GridListTile>
+      </GridList>
       <Admin />
     </>
   );

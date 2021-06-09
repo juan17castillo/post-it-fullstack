@@ -42,6 +42,7 @@ export const getPostsByUser = (creator) => async (dispatch) => {
     dispatch({ type: START_LOADING });
     const { data } = await api.fetchPostsByUser(creator);
     dispatch({ type: FETCH_POSTS_BY_USER, payload: data });
+    console.log("Fetched actions: ", data);
     dispatch({ type: END_LOADING });
   } catch (error) {
     console.log(error);

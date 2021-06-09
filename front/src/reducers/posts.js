@@ -41,7 +41,7 @@ export default (
         ),
       };
     case CREATE:
-      return { ...state, posts: [...state.posts, action.payload], postsByUser: [...state.postsByUser, action.payload.data] };
+      return { ...state, posts: [...state.posts, action.payload]};
     case UPDATE:
       return {
         ...state,
@@ -52,8 +52,7 @@ export default (
     case DELETE:
       return {
         ...state,
-        posts: state.posts.filter((post) => post._id !== action.payload),
-        postsByUser: state.postsByUser.filter((post) => post._id !== action.payload),
+        posts: state.posts.filter((post) => post._id !== action.payload)
       };
     default:
       return state;
