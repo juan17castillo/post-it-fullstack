@@ -165,7 +165,7 @@ export const getPostsByUser = async (req, res) =>
   try {
     const posts = await PostMessage.find({ creator: creatorId });
     res.status(200).json({
-      data: posts,
+      posts: posts,
     });
   } catch (error) {
     res.status(404).json({ message: error.message });
