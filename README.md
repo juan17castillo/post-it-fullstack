@@ -10,7 +10,7 @@
 
 #### Figma Mockups: https://www.figma.com/file/qVqSSJNn4EZJQ6DvDUEsCl/Post-it
 #### Heroku backend deployment: https://postit-juan17castillo.herokuapp.com/
-#### Netlify frontend deployment: 🔒
+#### Netlify frontend deployment: https://postit-juan17castillo.netlify.app/
 
 ## Instalación
 
