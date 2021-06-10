@@ -9,6 +9,9 @@
 ![Details](https://github.com/juan17castillo/post-it-fullstack/blob/master/pictures/post-details.png)
 
 
+#### Heroku backend deployment: https://postit-juan17castillo.herokuapp.com/
+#### Netlify frontend deployment: 🔒
+
 ## Instalación
 
 👨‍🔧 Usa esta línea para agregar los Node modules (si tiene npm):
