@@ -44,7 +44,7 @@ const Post = ({ post, setCurrentId }) => {
       ) : (
         <>
           <ThumbUpAltOutlined fontSize="small" />
-          &nbsp;{post.likes.length} {post.likes.length === 1 ? "Like" : "Likes"}
+          &nbsp;{post.likes.length} {post.likes.length === 1 ? "ME GUSTA" : "Likes"}
         </>
       );
     }
@@ -52,7 +52,7 @@ const Post = ({ post, setCurrentId }) => {
     return (
       <>
         <ThumbUpAltOutlined fontSize="small" />
-        &nbsp;Like
+        &nbsp;Me gusta
       </>
     );
   };
@@ -129,7 +129,7 @@ const Post = ({ post, setCurrentId }) => {
             color="secondary"
             onClick={() => dispatch(deletePost(post._id))}
           >
-            <DeleteIcon fontSize="small" /> &nbsp; Delete
+            <DeleteIcon fontSize="small" /> &nbsp; Eliminar
           </Button>
         )}
       </CardActions>
