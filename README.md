@@ -43,7 +43,7 @@ El formulario de inicio de sesión se encarga de crear un usuario después de re
 ### 🔑 Inicia sesión
 El login se encarga de proporcionar un inicio de sesión de usuario después de realizar comprobaciones en la base de datos noSQL Atlas. Se genera un token correspondiente a una hora y se toma la sal de la contraseña almacenada en la base de datos, luego se almacena el hash en otra variable y se ejecuta el algoritmo Función de derivación de clave 2 basada en contraseña (PBKDF2) con la contraseña descompuesta.
 
-![Sign in](https://github.com/juan17castillo/post-it-fullstack/blob/master/pictures/sign-in.png)
+![Sign in](https://github.com/juan17castillo/post-it-fullstack/blob/master/pictures/login.png)
 
 ### 🧪 Acerca del PBKDF2
 Es una función unidireccional diseñada para crear una salida corta de tamaño fijo a partir de una entrada determinada. En el caso del hash de la contraseña, la entrada sería la contraseña y la sal. El tamaño de la sal y el recuento de iteraciones se consideran comúnmente parámetros de configuración; ambos, por supuesto, influyen en la salida del hash de la contraseña. (Bodewes, 2016). Para su funcionamiento requiere la contraseña (secreta) en texto plano, un sal recomendado de 16 bits aleatorios, número de iteraciones del algoritmo, longitud de la clave y el compendio, en este caso, sha512.
