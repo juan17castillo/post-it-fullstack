@@ -8,6 +8,9 @@
 ![Dashboard](https://github.com/juan17castillo/post-it-fullstack/blob/master/pictures/Post-it.png)
 ![Details](https://github.com/juan17castillo/post-it-fullstack/blob/master/pictures/post-details.png)
 
+#### Figma Mockups: https://www.figma.com/file/qVqSSJNn4EZJQ6DvDUEsCl/Post-it
+#### Heroku backend deployment: https://postit-juan17castillo.herokuapp.com/
+#### Netlify frontend deployment: 🔒
 
 ## Instalación
 
@@ -43,7 +46,7 @@ El formulario de inicio de sesión se encarga de crear un usuario después de re
 ### 🔑 Inicia sesión
 El login se encarga de proporcionar un inicio de sesión de usuario después de realizar comprobaciones en la base de datos noSQL Atlas. Se genera un token correspondiente a una hora y se toma la sal de la contraseña almacenada en la base de datos, luego se almacena el hash en otra variable y se ejecuta el algoritmo Función de derivación de clave 2 basada en contraseña (PBKDF2) con la contraseña descompuesta.
 
-![Sign in](https://github.com/juan17castillo/post-it-fullstack/blob/master/pictures/sign-in.png)
+![Sign in](https://github.com/juan17castillo/post-it-fullstack/blob/master/pictures/login.png)
 
 ### 🧪 Acerca del PBKDF2
 Es una función unidireccional diseñada para crear una salida corta de tamaño fijo a partir de una entrada determinada. En el caso del hash de la contraseña, la entrada sería la contraseña y la sal. El tamaño de la sal y el recuento de iteraciones se consideran comúnmente parámetros de configuración; ambos, por supuesto, influyen en la salida del hash de la contraseña. (Bodewes, 2016). Para su funcionamiento requiere la contraseña (secreta) en texto plano, un sal recomendado de 16 bits aleatorios, número de iteraciones del algoritmo, longitud de la clave y el compendio, en este caso, sha512.
@@ -61,7 +64,7 @@ Los usuarios tienen dos roles. Un rol común que se crea a través de la platafo
 Se utilizó una función de API síncrona, criptografía. En la primera instancia, traté de usar la versión asincrónica que esperaba una devolución de llamada pero, quizás, debido a las condiciones de rendimiento, la asignación a la variable se ejecutó primero cuando se llamó desde el frente, por lo que constantemente terminaba en "indefinido" el cuerpo de solicitud de la petición. Por tanto, se optó por una versión síncrona y con menor número de iteraciones. El manejo de estados mediante Redux representó un reto pues también utilicé por primera vez Redux Thunk, una variación de la herramienta mencionada. Las gráficas representadas mediante la dependencia React-chartjs-2 aún presentan dificultades si se recarga la página.
 
 ### 🎓 Conclusiones
-Es una experiencia gratificante haber realizado este proyecto solo porque pude darme cuenta de todos los aspectos que involucraba. Sin duda, la seguridad es un pilar fundamental para que nuestro sistema / plataforma represente o inspire confianza y tranquilidad de que, como usuario final, puedo estar protegido ya que alguien como un programador estaba preocupado por cuidar la mayor cantidad de vulnerabilidades posible. en el código. NodeJS ofrece facilidades para desarrollar rápidamente una API sin demasiado código "boiler plate" por lo que fue una elección pertinente para la dimensión del proyecto. En el apartado técnico, PBKDF2 es una alternativa interesante y bastante académica de explorar porque en mi opinión, existen formas de cifrado más sencillas en cuanto a implementación que pueden cumplir la misma tarea. Incluso el mercado tiende a dejar los propios logins de la plataforma para pasar a utilizar las apis de grandes empresas como Google OAuth, Facebook, entre otras.
+Es una experiencia gratificante haber realizado este proyecto solo porque pude darme cuenta de todos los aspectos que involucraba. Sin duda, la seguridad es un pilar fundamental para que nuestro sistema / plataforma represente o inspire confianza y tranquilidad de que, como usuario final, puedo estar protegido ya que alguien como un programador se ha encargado de cuidar la mayor cantidad de vulnerabilidades posibles en el código. NodeJS ofrece facilidades para desarrollar rápidamente una API sin demasiado código "boiler plate" por lo que fue una elección pertinente para la dimensión del proyecto. En el apartado técnico, PBKDF2 es una alternativa interesante y bastante académica de explorar porque en mi opinión, existen formas de cifrado más sencillas en cuanto a implementación que pueden cumplir la misma tarea. Incluso el mercado tiende a dejar los propios logins de la plataforma para pasar a utilizar las apis de grandes empresas como Google OAuth, Facebook, entre otras.
 
 ### ✉️ Contribuciones
 No dudes en enviarme un mensaje si ves algo que cambiar o contribuir.
