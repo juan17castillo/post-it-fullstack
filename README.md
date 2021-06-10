@@ -8,7 +8,7 @@
 ![Dashboard](https://github.com/juan17castillo/post-it-fullstack/blob/master/pictures/Post-it.png)
 ![Details](https://github.com/juan17castillo/post-it-fullstack/blob/master/pictures/post-details.png)
 
-
+#### Figma Mockups: https://www.figma.com/file/qVqSSJNn4EZJQ6DvDUEsCl/Post-it
 #### Heroku backend deployment: https://postit-juan17castillo.herokuapp.com/
 #### Netlify frontend deployment: 🔒
 
